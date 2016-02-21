@@ -10,7 +10,7 @@
                 android:topLeftRadius="5dp"
                 />
             <solid
-                android:color="@color/hotPink"
+                android:color="@color/lightskyblue"
                 />
         </shape>
     </item>
@@ -23,7 +23,7 @@
                 android:topLeftRadius="5dp"
                 />
             <solid
-                android:color="@color/deepPink"
+                android:color="@color/deepSkyBlue"
                 />
         </shape>
     </item>

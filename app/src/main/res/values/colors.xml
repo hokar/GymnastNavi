@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <color name="deepSkyBlue">#00bfff</color>
+    <color name="lightskyblue">#87cefa</color>
+    <color name="deepPink">#ff1493</color>
+    <color name="hotPink">#ff69b4</color>
+</resources>

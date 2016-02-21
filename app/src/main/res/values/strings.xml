@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">GymnasticsNavi</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <!-- 性別選択画面 -->
+    <string name="gender_select_text">性別を選択してください</string>
+    <string name="male">男子</string>
+    <string name="female">女子</string>
 </resources>
