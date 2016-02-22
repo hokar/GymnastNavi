@@ -3,6 +3,14 @@
 
     <string name="action_settings">Settings</string>
 
+    <!-- クラス選択画面 -->
+    <string name="class_select_text">クラスを選択してください</string>
+    <string name="class_beginner">初心者クラス</string>
+    <string name="class_beginner_description">幼児レベルから小学校の体育レベルの技を見ることができます。</string>
+    <string name="class_professional">競技クラス</string>
+    <string name="class_professional_description">体操競技レベルの技を見ることができます。</string>
+
+
     <!-- 性別選択画面 -->
     <string name="gender_select_text">性別を選択してください</string>
     <string name="male">男子</string>

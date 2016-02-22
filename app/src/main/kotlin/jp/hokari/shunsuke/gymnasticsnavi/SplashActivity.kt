@@ -23,7 +23,7 @@ class SplashActivity : ActionBarActivity() {
 
     private fun nextStartActivity() {
         Handler().postDelayed({
-            startActivity(Intent(this@SplashActivity, GenderSelectActivity::class.java))
+            startActivity(Intent(this@SplashActivity, ClassSelectActivity::class.java))
         }, NEXT_ACTIVITY_DELAY)
     }
 }

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        style="@style/BaseFrame"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            style="@style/MessageTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:text="@string/gender_select_text"/>
+
+        <RelativeLayout
+            android:id="@+id/btn_beginner_class"
+            style="@style/ClassSelectCell"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/icon_beginner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_test"
+                android:contentDescription="@null"/>
+
+            <TextView
+                android:id="@+id/title_beginner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/class_beginner"
+                android:textSize="16sp"
+                android:layout_toRightOf="@id/icon_beginner"
+                android:layout_toEndOf="@id/icon_beginner"
+                android:layout_alignTop="@id/icon_beginner"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/class_beginner_description"
+                android:textSize="12sp"
+                android:layout_below="@+id/title_beginner"
+                android:layout_toRightOf="@id/icon_beginner"
+                android:layout_toEndOf="@id/icon_beginner"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_professional_class"
+            style="@style/ClassSelectCell"
+            android:layout_width="match_parent">
+
+            <ImageView
+                android:id="@+id/icon_professional"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_test"
+                android:contentDescription="@null"/>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/class_professional"
+                android:textSize="16sp"
+                android:layout_toRightOf="@id/icon_professional"
+                android:layout_toEndOf="@id/icon_professional"
+                android:layout_alignTop="@id/icon_professional"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/class_professional_description"
+                android:textSize="12sp"
+                android:layout_below="@+id/title"
+                android:layout_toRightOf="@id/icon_professional"
+                android:layout_toEndOf="@id/icon_professional"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</layout>
