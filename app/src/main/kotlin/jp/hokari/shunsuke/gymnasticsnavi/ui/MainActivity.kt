@@ -1,7 +1,8 @@
-package jp.hokari.shunsuke.gymnasticsnavi
+package jp.hokari.shunsuke.gymnasticsnavi.ui
 
 import android.os.Bundle
 import android.support.v7.app.ActionBarActivity
+import jp.hokari.shunsuke.gymnasticsnavi.R
 
 class MainActivity : ActionBarActivity() {
 

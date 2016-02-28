@@ -9,7 +9,7 @@
         android:theme="@style/AppTheme" >
 
         <activity
-            android:name=".SplashActivity"
+            android:name=".ui.SplashActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,9 +18,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".ClassSelectActivity"/>
-        <activity android:name=".GenderSelectActivity"/>
+        <activity android:name=".ui.MainActivity"/>
+        <activity android:name=".ui.ClassSelectActivity"/>
+        <activity android:name=".ui.GenderSelectActivity"/>
     </application>
 
 </manifest>

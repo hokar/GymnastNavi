@@ -1,10 +1,11 @@
-package jp.hokari.shunsuke.gymnasticsnavi
+package jp.hokari.shunsuke.gymnasticsnavi.ui
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.ActionBarActivity
 import android.util.Log
 import android.view.View
+import jp.hokari.shunsuke.gymnasticsnavi.R
 import jp.hokari.shunsuke.gymnasticsnavi.databinding.ActivityGenderSelectBinding
 
 /**
