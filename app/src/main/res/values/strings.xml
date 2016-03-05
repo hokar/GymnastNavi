@@ -15,4 +15,14 @@
     <string name="gender_select_text">性別を選択してください</string>
     <string name="male">男子</string>
     <string name="female">女子</string>
+
+    <!-- タブ -->
+    <string name="tab_floor">床</string>
+    <string name="tab_pommel_horse">あん馬</string>
+    <string name="tab_rings">つり輪</string>
+    <string name="tab_vaults">跳馬</string>
+    <string name="tab_parallel_bar">平行棒</string>
+    <string name="tab_horizontal_bar">鉄棒</string>
+    <string name="tab_balance_beam">平均台</string>
+    <string name="tab_uneven_bars">段違い平行棒</string>
 </resources>

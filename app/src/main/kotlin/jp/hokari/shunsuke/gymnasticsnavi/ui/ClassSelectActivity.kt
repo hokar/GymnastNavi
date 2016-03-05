@@ -3,7 +3,7 @@ package jp.hokari.shunsuke.gymnasticsnavi.ui
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.app.ActionBarActivity
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import jp.hokari.shunsuke.gymnasticsnavi.R
 import jp.hokari.shunsuke.gymnasticsnavi.databinding.ActivityClassSelectBinding
@@ -13,7 +13,7 @@ import jp.hokari.shunsuke.gymnasticsnavi.databinding.ActivityClassSelectBinding
  *
  * Created by shunsukehokari on 2016/02/22.
  */
-class ClassSelectActivity : ActionBarActivity() {
+class ClassSelectActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
