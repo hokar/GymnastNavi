@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import jp.hokari.shunsuke.gymnasticsnavi.R
 import jp.hokari.shunsuke.gymnasticsnavi.databinding.ActivityMainBinding
+import jp.hokari.shunsuke.gymnasticsnavi.ui.skill.SkillListFragment
 import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
@@ -77,7 +78,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun getItem(p0: Int): Fragment? {
-            return SampleFragment()
+            return SkillListFragment()
         }
 
     }
