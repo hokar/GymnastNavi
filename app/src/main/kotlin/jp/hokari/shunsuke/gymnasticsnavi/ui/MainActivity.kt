@@ -1,23 +1,39 @@
 package jp.hokari.shunsuke.gymnasticsnavi.ui
 
 import android.content.Context
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import jp.hokari.shunsuke.gymnasticsnavi.R
 import jp.hokari.shunsuke.gymnasticsnavi.databinding.ActivityMainBinding
-import java.util.*
 import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
 
+    public enum class Genre(var arrayResId : Int) {
+        MALE(R.array.male_tabs),
+        FEMALE(R.array.female_tabs),
+        BEGINNER(R.array.beginner_tabs)
+    }
+    companion object {
+        private val ARG_GENRE = "ARG_GENRE"
+
+        fun startMainActivity(context: Context, genre: Genre) {
+            var intent : Intent = Intent(context, MainActivity::class.java)
+            intent.putExtra(ARG_GENRE, genre)
+            context.startActivity(intent)
+        }
+    }
+
     private var mPagerAdapter : SectionsPagerAdapter by Delegates.notNull()
     private var mBinding : ActivityMainBinding by Delegates.notNull()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override public fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -25,27 +41,26 @@ class MainActivity : AppCompatActivity() {
         setupView()
     }
 
-    fun setupView() {
-        mPagerAdapter = SectionsPagerAdapter(supportFragmentManager, this)
+    private fun setupView() {
+        var genre : Genre = intent.getSerializableExtra(ARG_GENRE) as Genre
+
+        var array = resources.getStringArray(genre.arrayResId)
+
+        for(aaa in array) {
+            Log.d("aaa", "aaa " + aaa);
+        }
+
+        mPagerAdapter = SectionsPagerAdapter(supportFragmentManager, resources.getStringArray(genre.arrayResId))
         mBinding.pager.setAdapter(mPagerAdapter)
 
         // タブ
         mBinding.tabLayout.setupWithViewPager(mBinding.pager)
     }
 
-    class SectionsPagerAdapter(fragmentManager: FragmentManager, context: Context) : FragmentPagerAdapter(fragmentManager) {
-        private val mContext : Context = context
-
-        private  val mTabsName : ArrayList<Int> = arrayListOf(
-                R.string.tab_floor,
-                R.string.tab_pommel_horse,
-                R.string.tab_rings,
-                R.string.tab_vaults,
-                R.string.tab_parallel_bar,
-                R.string.tab_horizontal_bar
-        )
+    private class SectionsPagerAdapter(fragmentManager: FragmentManager, tabs: Array<String>) : FragmentPagerAdapter(fragmentManager) {
+        private  val mTabsName = tabs
         override fun getPageTitle(position: Int): CharSequence? {
-            return mContext.getString(mTabsName.get(position))
+            return mTabsName.get(position)
         }
 
         override fun getCount(): Int {

@@ -1,6 +1,5 @@
 package jp.hokari.shunsuke.gymnasticsnavi.ui
 
-import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -22,12 +21,13 @@ class GenderSelectActivity : AppCompatActivity() {
 
 
         binding.btnMale.setOnClickListener(View.OnClickListener {
-            Log.d("aaa", "onClick Male Button");
-            startActivity(Intent(this@GenderSelectActivity, MainActivity::class.java))
+            Log.d("aaa", "onClick Male Button")
+            MainActivity.startMainActivity(this@GenderSelectActivity, MainActivity.Genre.MALE)
         })
 
         binding.btnFemale.setOnClickListener(View.OnClickListener {
-            Log.d("aaa", "onClick Female Button");
+            Log.d("aaa", "onClick Female Button")
+            MainActivity.startMainActivity(this@GenderSelectActivity, MainActivity.Genre.FEMALE)
         })
     }
 }

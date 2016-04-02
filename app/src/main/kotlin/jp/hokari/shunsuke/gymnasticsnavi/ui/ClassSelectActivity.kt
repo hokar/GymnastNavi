@@ -22,6 +22,7 @@ class ClassSelectActivity : AppCompatActivity() {
         // 初心者クラスのクリックイベント
         binding.btnBeginnerClass.setOnClickListener({
             Log.d("aaa", "beginner class button clicked")
+            MainActivity.startMainActivity(this@ClassSelectActivity, MainActivity.Genre.BEGINNER)
         })
 
         // 体操競技クラスのクリックイベント

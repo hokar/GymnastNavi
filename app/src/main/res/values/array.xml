@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="male_tabs">
+        <item>@string/tab_floor</item>
+        <item>@string/tab_pommel_horse</item>
+        <item>@string/tab_rings</item>
+        <item>@string/tab_vaults</item>
+        <item>@string/tab_parallel_bar</item>
+        <item>@string/tab_horizontal_bar</item>
+    </array>
+
+    <array name="female_tabs">
+        <item>@string/tab_floor</item>
+        <item>@string/tab_balance_beam</item>
+        <item>@string/tab_vaults</item>
+        <item>@string/tab_uneven_bars</item>
+    </array>
+
+    <array name="beginner_tabs">
+        <item>@string/tab_mat</item>
+        <item>@string/tab_box</item>
+        <item>@string/tab_horizontal_bar</item>
+    </array>
+</resources>

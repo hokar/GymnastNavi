@@ -25,4 +25,6 @@
     <string name="tab_horizontal_bar">鉄棒</string>
     <string name="tab_balance_beam">平均台</string>
     <string name="tab_uneven_bars">段違い平行棒</string>
+    <string name="tab_mat">マット</string>
+    <string name="tab_box">跳び箱</string>
 </resources>
