@@ -15,14 +15,28 @@ import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
 
+    /**
+     * タブタイプ
+     *
+     * MALE : 男子種目
+     * FEMALE : 女子種目
+     * BEGINNER : 初心者種目
+     */
     public enum class Genre(var arrayResId : Int) {
         MALE(R.array.male_tabs),
         FEMALE(R.array.female_tabs),
         BEGINNER(R.array.beginner_tabs)
     }
+
     companion object {
         private val ARG_GENRE = "ARG_GENRE"
 
+        /**
+         * Activityを起動させる
+         *
+         * @param context コンテキスト
+         * @param genre ジャンル(タブタイプ)
+         */
         fun startMainActivity(context: Context, genre: Genre) {
             var intent : Intent = Intent(context, MainActivity::class.java)
             intent.putExtra(ARG_GENRE, genre)
@@ -44,12 +58,6 @@ class MainActivity : AppCompatActivity() {
     private fun setupView() {
         var genre : Genre = intent.getSerializableExtra(ARG_GENRE) as Genre
 
-        var array = resources.getStringArray(genre.arrayResId)
-
-        for(aaa in array) {
-            Log.d("aaa", "aaa " + aaa);
-        }
-
         mPagerAdapter = SectionsPagerAdapter(supportFragmentManager, resources.getStringArray(genre.arrayResId))
         mBinding.pager.setAdapter(mPagerAdapter)
 
@@ -57,6 +65,7 @@ class MainActivity : AppCompatActivity() {
         mBinding.tabLayout.setupWithViewPager(mBinding.pager)
     }
 
+    // ページャー用アダプター
     private class SectionsPagerAdapter(fragmentManager: FragmentManager, tabs: Array<String>) : FragmentPagerAdapter(fragmentManager) {
         private  val mTabsName = tabs
         override fun getPageTitle(position: Int): CharSequence? {

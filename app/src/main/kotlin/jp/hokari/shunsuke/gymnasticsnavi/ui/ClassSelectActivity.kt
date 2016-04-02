@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import jp.hokari.shunsuke.gymnasticsnavi.R
 import jp.hokari.shunsuke.gymnasticsnavi.databinding.ActivityClassSelectBinding
+import jp.hokari.shunsuke.gymnasticsnavi.util.LogUtil
 
 /**
  * クラス選択画面
@@ -21,13 +22,13 @@ class ClassSelectActivity : AppCompatActivity() {
 
         // 初心者クラスのクリックイベント
         binding.btnBeginnerClass.setOnClickListener({
-            Log.d("aaa", "beginner class button clicked")
+            LogUtil.d("beginner class button clicked")
             MainActivity.startMainActivity(this@ClassSelectActivity, MainActivity.Genre.BEGINNER)
         })
 
         // 体操競技クラスのクリックイベント
         binding.btnProfessionalClass.setOnClickListener({
-            Log.d("aaa", "professional class button clicked")
+            LogUtil.d("professional class button clicked")
             startActivity(Intent(this@ClassSelectActivity, GenderSelectActivity::class.java))
         })
     }
