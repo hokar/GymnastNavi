@@ -3,37 +3,30 @@ package jp.hokari.shunsuke.gymnasticsnavi.ui.skill
 import android.content.Context
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import android.support.v4.app.ListFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import jp.hokari.shunsuke.gymnasticsnavi.R
-import jp.hokari.shunsuke.gymnasticsnavi.databinding.FragmentSkillListBinding
 import jp.hokari.shunsuke.gymnasticsnavi.databinding.ItemSkillBinding
 import jp.hokari.shunsuke.gymnasticsnavi.model.SkillData
-import kotlin.properties.Delegates
 
 /**
  * 技一覧Fragment
  *
  * Created by shunsuke on 16/04/03.
  */
-class SkillListFragment : Fragment() {
-    private var mBinding : FragmentSkillListBinding by Delegates.notNull()
-    private var mSkillListAdapter : SkillListAdapter by Delegates.notNull()
+class SkillListFragment : ListFragment() {
+    private var mSkillListAdapter: SkillListAdapter? = null
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
-        mBinding = FragmentSkillListBinding.inflate(inflater, container, false)
+     override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
 
-        setupSkillList();
-
-        return mBinding.root
+        setupSkillList()
     }
 
     private fun setupSkillList() {
-
         // 仮データ TODO:あとで消す
         val item1 : SkillData = SkillData(1, "後方跳び", "A", 0, 0, 0)
         val item2 : SkillData = SkillData(2, "後方抱え込み宙返り", "A", 0, 0, 0)
@@ -46,7 +39,7 @@ class SkillListFragment : Fragment() {
         val array = arrayOf(item1, item2, item3, item4, item5, item6, item7, item8)
 
         mSkillListAdapter = SkillListAdapter(getActivity(), array)
-        mBinding.list.adapter = mSkillListAdapter
+        listAdapter = mSkillListAdapter
     }
 
 
@@ -56,7 +49,7 @@ class SkillListFragment : Fragment() {
         val mList : Array<SkillData> = items
 
         override fun getCount() : Int {
-            return mList.count()
+            return mList.size
         }
 
         override fun getItemId(position: Int): Long {
@@ -67,8 +60,8 @@ class SkillListFragment : Fragment() {
             return mList.get(position)
         }
 
-        override fun getView(position : Int, convertView : View?, parent : ViewGroup) : View{
-            val binding : ItemSkillBinding = DataBindingUtil.inflate(LayoutInflater.from(mContext), R.layout.item_skill, parent, false)
+        override fun getView(position : Int, convertView : View?, parent : ViewGroup) : View {
+            val binding: ItemSkillBinding = DataBindingUtil.inflate(LayoutInflater.from(mContext), R.layout.item_skill, parent, false)
 
             binding.skillName.text = getItem(position).skillName
             binding.skillDifficulty.text = getItem(position).difficulty

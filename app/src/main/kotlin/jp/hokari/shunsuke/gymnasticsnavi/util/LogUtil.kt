@@ -1,11 +1,7 @@
 package jp.hokari.shunsuke.gymnasticsnavi.util
 
-import android.content.Context
-import android.content.Intent
-import android.os.Build
 import android.util.Log
 import jp.hokari.shunsuke.gymnasticsnavi.BuildConfig
-import jp.hokari.shunsuke.gymnasticsnavi.ui.MainActivity
 
 /**
  * ログ出力クラス

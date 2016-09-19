@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
+import android.support.v4.app.ListFragment
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import jp.hokari.shunsuke.gymnasticsnavi.R
@@ -45,8 +46,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private var mPagerAdapter : SectionsPagerAdapter by Delegates.notNull()
-    private var mBinding : ActivityMainBinding by Delegates.notNull()
+    private var mPagerAdapter: SectionsPagerAdapter? = null
+    private var mBinding: ActivityMainBinding? = null
 
     override public fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,10 +61,10 @@ class MainActivity : AppCompatActivity() {
         var genre : Genre = intent.getSerializableExtra(ARG_GENRE) as Genre
 
         mPagerAdapter = SectionsPagerAdapter(supportFragmentManager, resources.getStringArray(genre.arrayResId))
-        mBinding.pager.setAdapter(mPagerAdapter)
+        mBinding?.pager?.adapter = mPagerAdapter
 
         // タブ
-        mBinding.tabLayout.setupWithViewPager(mBinding.pager)
+        mBinding?.tabLayout?.setupWithViewPager(mBinding?.pager)
     }
 
     // ページャー用アダプター
@@ -77,7 +78,7 @@ class MainActivity : AppCompatActivity() {
             return mTabsName.count()
         }
 
-        override fun getItem(p0: Int): Fragment? {
+        override fun getItem(p0: Int): ListFragment? {
             return SkillListFragment()
         }
 
