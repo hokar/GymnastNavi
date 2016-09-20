@@ -11,6 +11,7 @@ import android.widget.BaseAdapter
 import jp.hokari.shunsuke.gymnasticsnavi.R
 import jp.hokari.shunsuke.gymnasticsnavi.databinding.ItemSkillBinding
 import jp.hokari.shunsuke.gymnasticsnavi.model.SkillData
+import jp.hokari.shunsuke.gymnasticsnavi.ui.common.ModalActivity
 
 /**
  * 技一覧Fragment
@@ -53,18 +54,26 @@ class SkillListFragment : ListFragment() {
         }
 
         override fun getItemId(position: Int): Long {
-            return mList.get(position).id
+            return mList[position].id
         }
 
         override fun getItem(position : Int) : SkillData {
-            return mList.get(position)
+            return mList[position]
         }
 
         override fun getView(position : Int, convertView : View?, parent : ViewGroup) : View {
-            val binding: ItemSkillBinding = DataBindingUtil.inflate(LayoutInflater.from(mContext), R.layout.item_skill, parent, false)
+            val binding: ItemSkillBinding?
+            if (convertView == null) {
+                binding = DataBindingUtil.inflate<ItemSkillBinding>(LayoutInflater.from(mContext), R.layout.item_skill, parent, false)
+            } else {
+                binding = DataBindingUtil.bind(convertView)
+            }
 
             binding.skillName.text = getItem(position).skillName
             binding.skillDifficulty.text = getItem(position).difficulty
+            binding.root.setOnClickListener {
+                ModalActivity.startModal(mContext, getItem(position).skillName)
+            }
 
             return binding.root;
         }

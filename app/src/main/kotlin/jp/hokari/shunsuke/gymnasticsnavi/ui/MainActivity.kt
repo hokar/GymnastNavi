@@ -4,16 +4,13 @@ import android.content.Context
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.app.ListFragment
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import jp.hokari.shunsuke.gymnasticsnavi.R
 import jp.hokari.shunsuke.gymnasticsnavi.databinding.ActivityMainBinding
 import jp.hokari.shunsuke.gymnasticsnavi.ui.skill.SkillListFragment
-import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,7 +37,7 @@ class MainActivity : AppCompatActivity() {
          * @param genre ジャンル(タブタイプ)
          */
         fun startMainActivity(context: Context, genre: Genre) {
-            var intent : Intent = Intent(context, MainActivity::class.java)
+            val intent : Intent = Intent(context, MainActivity::class.java)
             intent.putExtra(ARG_GENRE, genre)
             context.startActivity(intent)
         }
@@ -51,8 +48,6 @@ class MainActivity : AppCompatActivity() {
 
     override public fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
         mBinding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         setupView()
     }

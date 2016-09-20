@@ -21,6 +21,7 @@
         <activity android:name=".ui.MainActivity"/>
         <activity android:name=".ui.ClassSelectActivity"/>
         <activity android:name=".ui.GenderSelectActivity"/>
+        <activity android:name=".ui.common.ModalActivity" />
     </application>
 
 </manifest>

@@ -3,6 +3,9 @@
 
     <string name="action_settings">Settings</string>
 
+    <!-- 共通 -->
+    <string name="close">閉じる</string>
+
     <!-- クラス選択画面 -->
     <string name="class_select_text">クラスを選択してください</string>
     <string name="class_beginner">初心者クラス</string>
