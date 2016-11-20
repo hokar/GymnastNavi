@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
      * FEMALE : 女子種目
      * BEGINNER : 初心者種目
      */
-    public enum class Genre(var arrayResId : Int) {
+    enum class Genre(var arrayResId : Int) {
         MALE(R.array.male_tabs),
         FEMALE(R.array.female_tabs),
         BEGINNER(R.array.beginner_tabs)
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupView() {
-        var genre : Genre = intent.getSerializableExtra(ARG_GENRE) as Genre
+        val genre : Genre = intent.getSerializableExtra(ARG_GENRE) as Genre
 
         mPagerAdapter = SectionsPagerAdapter(supportFragmentManager, resources.getStringArray(genre.arrayResId))
         mBinding?.pager?.adapter = mPagerAdapter
