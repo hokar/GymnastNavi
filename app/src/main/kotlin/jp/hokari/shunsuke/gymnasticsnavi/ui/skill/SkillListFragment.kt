@@ -12,6 +12,7 @@ import jp.hokari.shunsuke.gymnasticsnavi.R
 import jp.hokari.shunsuke.gymnasticsnavi.databinding.ItemSkillBinding
 import jp.hokari.shunsuke.gymnasticsnavi.model.SkillData
 import jp.hokari.shunsuke.gymnasticsnavi.ui.common.ModalActivity
+import jp.hokari.shunsuke.gymnasticsnavi.ui.detail.SkillDetailFragment
 
 /**
  * 技一覧Fragment
@@ -72,7 +73,7 @@ class SkillListFragment : ListFragment() {
             binding.skillName.text = getItem(position).skillName
             binding.skillDifficulty.text = getItem(position).difficulty
             binding.root.setOnClickListener {
-                ModalActivity.startModal(mContext, getItem(position).skillName)
+                ModalActivity.startModal(mContext, getItem(position).skillName, SkillDetailFragment())
             }
 
             return binding.root;
